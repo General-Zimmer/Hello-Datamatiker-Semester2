@@ -73,35 +73,48 @@ public class App
         }
     }
 
+    /**
+     * Merge two sorted sublists into one sorted list
+     * <p>
+     *     Test array 8, 56, 45, 34, 15, 12, 34, 44
+     * @param list The list to sort
+     * @param low The lowest index to sort
+     * @param middle The middle index to sort
+     * @param high The highest index to sort
+     */
     private static void merge(ArrayList<Integer> list, int low, int middle, int high) {
-        ArrayList<Integer> temp = new ArrayList<>();
-        ArrayList<Integer> smolList = new ArrayList<>(list.subList(low, middle));
-        ArrayList<Integer> bigList = new ArrayList<>(list.subList(middle+1, high));
+        ArrayList<Integer> arr = new ArrayList<>();
 
-        if (smolList.isEmpty() || bigList.isEmpty()) {
-            return;
-        }
-
-        int i = 0;
-        int j = 0;
-        do {
-            if (smolList.get(i) < bigList.get(j)) {
-                temp.add(smolList.get(i));
-                i++;
-            } else {
-                temp.add(bigList.get(j));
+        int i = low;
+        int j = middle+1;
+        while (i <= middle && j <= high) {
+            int smol = list.get(i);
+            int big = list.get(j);
+            if (smol > big) {
+                arr.add(list.get(j));
                 j++;
+            } else {
+                arr.add(list.get(i));
+                i++;
+
             }
-        } while (i < smolList.size() && j < bigList.size());
-
-
-        int k = 0;
-        int l = low;
-        while (k < smolList.size()) {
-            list.set(l, temp.get(k));
-            k++;
-            l++;
         }
+
+        while(i<=middle){
+            arr.add(list.get(i));
+            i++;
+        }
+
+        while(j<=high){
+            arr.add(list.get(j));
+            j++;
+        }
+
+        for (int k : arr) {
+            list.set(low, k);
+            low++;
+        }
+
     }
 
 }
