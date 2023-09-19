@@ -14,6 +14,8 @@
     <module>L06</module>
     <module>L07 del løs kombinér</module>
     <module>L08 Generics</module>
+    <module>DAOSL08</module>
+    <module>L09</module>
   </modules>
 
   <properties>
@@ -36,6 +38,12 @@
   </build>
 
   <dependencies>
+
+    <dependency>
+      <groupId>com.microsoft.sqlserver</groupId>
+      <artifactId>mssql-jdbc</artifactId>
+      <version>7.0.0.jre10</version>
+    </dependency>
     <dependency>
       <groupId>org.openjfx</groupId>
       <artifactId>javafx-controls</artifactId>
