@@ -16,6 +16,7 @@
     <module>L08 Generics</module>
     <module>DAOSL08</module>
     <module>L09</module>
+      <module>L10</module>
   </modules>
 
   <properties>
