@@ -16,7 +16,7 @@ public class Opg5 {
             throw new FileNotFoundException("File not found");
         }
 
-        HashMap<String, ArrayList<Integer>> movieCounts = new HashMap<>();
+        HashMap<String, ArrayList<Integer>> movieAndReviews = new HashMap<>();
 
         try (is) {
             Scanner scan = new Scanner(is);
@@ -25,23 +25,23 @@ public class Opg5 {
 
             String name = null;
             for (int i = 0; i < reviews*2; i++) {
-                if (i % 2 == 0 && scan.hasNextLine()) {
+                if (i % 2 == 0) {
                     name = scan.nextLine();
                 } else {
                     int score = scan.nextInt();
-                    movieCounts.computeIfAbsent(name, k -> new ArrayList<>()).add(score);
-                    if (scan.hasNextLine())
+                    movieAndReviews.computeIfAbsent(name, k -> new ArrayList<>()).add(score);
+                    if (i != reviews*2-1) {
                         scan.nextLine();
+                    }
                 }
-
             }
         }
 
-        movieCounts.forEach((key, value) -> {
+        movieAndReviews.forEach((String filmNavn, ArrayList<Integer> karaktere) -> {
             float[] sum = new float[1];
 
-            value.forEach((score) -> sum[0] += score);
-            System.out.println(key + ": " + value.size() + ", gennemsnittet: " + (sum[0] / value.size()));
+            karaktere.forEach((score) -> sum[0] += score);
+            System.out.println(filmNavn + ": " + karaktere.size() + ", gennemsnittet: " + (sum[0] / karaktere.size()));
         });
     }
 }
