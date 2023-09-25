@@ -17,6 +17,7 @@
     <module>DAOSL08</module>
     <module>L09</module>
       <module>L10</module>
+    <module>L11</module>
   </modules>
 
   <properties>

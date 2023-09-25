@@ -36,7 +36,6 @@ public class Opg5 {
                 }
             }
         }
-
         movieAndReviews.forEach((String filmNavn, ArrayList<Integer> karaktere) -> {
             float[] sum = new float[1];
 
