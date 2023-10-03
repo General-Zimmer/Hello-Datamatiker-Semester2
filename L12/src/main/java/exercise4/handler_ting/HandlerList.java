@@ -4,19 +4,19 @@ import java.util.HashSet;
 
 public class HandlerList {
 
-    HashSet<Handler> handlers = new HashSet<>();
+    private final HashSet<FrameHandler> frameHandlers = new HashSet<>();
 
-    public void registerHandler(Handler handler) {
-        handlers.add(handler);
+    public void registerHandler(FrameHandler frameHandler) {
+        frameHandlers.add(frameHandler);
     }
 
-    public void unregisterHandler(Handler handler) {
-        handlers.remove(handler);
+    public void unregisterHandler(FrameHandler frameHandler) {
+        frameHandlers.remove(frameHandler);
     }
 
     public void update(String color) {
-        for (Handler handler : handlers) {
-            handler.update(color);
+        for (FrameHandler frameHandler : frameHandlers) {
+            frameHandler.update(color);
         }
     }
 

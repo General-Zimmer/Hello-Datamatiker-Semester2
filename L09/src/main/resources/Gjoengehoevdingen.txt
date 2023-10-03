@@ -2367,7 +2367,7 @@ besked. Men eders folk, hvor har vi dem?"
 "Guds død!" udbrød kaptajnen. "Er han alene?"
 "Ja, kaptajn! I vil træffe Svend Gjønge alene, en fattig mand,
 fredløs og forfulgt, forrådt af dem, der skulle være hans venner."
-"Eja, bondemand, hører du da ikke selv til hans venner? Hvordan I handler
+"Eja, bondemand, hører du da ikke selv til hans venner? Hvordan I frameHandler
 mod ham, det bliver eders sag, os er det kun om at
 gøre at få ham uskadeliggjort."
 "I forstod mig ikke ret," svarede Svend, "jeg mente, at vi havde
@@ -8190,7 +8190,7 @@ breve fra min kære ven, kaptajn Lykke. For hans skyld ville jeg
 nødig, at de skulle komme videre."
 "Jeg tror heller ikke, det var ham tjenligt," svarede Ib.
 "Lad os gøre en handel, min gode vagtmester, som to gamle
-kammerater handler."
+kammerater frameHandler."
 "Hvorom mente den nådige herre, vi skulle købslå?"
 "Om min vens breve. I lader mig få dem alle sammen, og jeg
 betaler et guldstykke for hvert brev."
@@ -8659,7 +8659,7 @@ for min skyld! Læg eder derimellem og forhindre det."
 "Nu vel da!" sagde Svend. "For eders skyld. I skal blive dette
 selskab kvit."
 "I gode mænd!" vedblev han, henvendt til dragonerne, "hold nu
-op med den sludder! I handler jo som børn og købslår om sager,
+op med den sludder! I frameHandler jo som børn og købslår om sager,
 der aldrig vil tilhøre eder."
 "Eja!" råbte dragonerne, lige meget forbavsede over disse ord
 og det truende ansigt, som ledsagede dem, "hvem vil forhindre det?"

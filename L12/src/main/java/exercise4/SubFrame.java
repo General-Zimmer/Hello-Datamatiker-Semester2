@@ -1,5 +1,6 @@
 package exercise4;
 
+import exercise4.handler_ting.FrameHandler;
 import javafx.geometry.Insets;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -10,6 +11,7 @@ import javafx.stage.StageStyle;
 
 public class SubFrame extends Stage {
     private final GridPane pane = new GridPane();
+    private FrameHandler frameHandler = new FrameHandler(this);
 
     public SubFrame(String title, Stage owner) {
         this.initOwner(owner);
@@ -39,11 +41,23 @@ public class SubFrame extends Stage {
 
         Button btnSubscribe = new Button("Subscribe");
         pane.add(btnSubscribe, 0, 1);
+        btnSubscribe.setOnAction(event -> this.subscribe());
 
         Button btnUnsubscribe = new Button("Unsubscribe");
         pane.add(btnUnsubscribe, 0, 2);
+        btnUnsubscribe.setOnAction(event -> this.unsubscribe());
 
         pane.add(this.lblInfo, 0, 3);
+    }
+
+    public void subscribe() {
+        this.lblInfo.setText("State: Subscribed");
+        this.frameHandler.subscribe();
+    }
+
+    public void unsubscribe() {
+        this.lblInfo.setText("State: Unsubscribed");
+        this.frameHandler.unsubscribe();
     }
 
     public void setStyle(String style) {

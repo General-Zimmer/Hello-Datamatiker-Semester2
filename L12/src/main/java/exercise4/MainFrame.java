@@ -10,6 +10,7 @@ import javafx.scene.control.RadioButton;
 import javafx.scene.control.ToggleGroup;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
+import lombok.Getter;
 
 public class MainFrame extends Application {
     private final GridPane pane = new GridPane();
@@ -18,6 +19,7 @@ public class MainFrame extends Application {
     public void start(Stage stage) {
         stage.setTitle("Ex. 4: Observer Pattern");
         this.initContent(stage);
+        stage.setMinWidth(300);
 
         Scene scene = new Scene(this.pane);
         stage.setScene(scene);
@@ -51,26 +53,28 @@ public class MainFrame extends Application {
         rbnBlue.setToggleGroup(group);
         rbnBlue.setOnAction(event -> this.blueAction());
 
+        // ----- ME STUFF
+
+        // Frame 1
         SubFrame subFrame1 = new SubFrame("SubFrame 1", stage);
 
         Button btnShowFrame1 = new Button("Open SubFrame 1");
         pane.add(btnShowFrame1, 0, 4);
-        btnShowFrame1.setOnAction(event -> this.toggleShowFrame(subFrame1));
+        btnShowFrame1.setOnAction(event -> this.toggleShowSubFrame(subFrame1));
 
+        // Frame 2
         SubFrame subFrame2 = new SubFrame("SubFrame 2", stage);
 
         Button btnShowFrame2 = new Button("Open SubFrame 2");
         pane.add(btnShowFrame2, 0, 5);
-        btnShowFrame2.setOnAction(event -> this.toggleShowFrame(subFrame2));
-
-
-
+        btnShowFrame2.setOnAction(event -> this.toggleShowSubFrame(subFrame2));
     }
 
     // ------------------------------------------------------------------------
 
     private String color;
-    private final HandlerList handlerList = new HandlerList();
+    @Getter
+    private static final HandlerList handlerList = new HandlerList();
 
     private void redAction() {
         color = "pink";
@@ -90,7 +94,7 @@ public class MainFrame extends Application {
         handlerList.update(color);
     }
 
-    private void toggleShowFrame(SubFrame frame) {
+    private void toggleShowSubFrame(SubFrame frame) {
         if (frame.isShowing()) {
             frame.hide();
         } else {
