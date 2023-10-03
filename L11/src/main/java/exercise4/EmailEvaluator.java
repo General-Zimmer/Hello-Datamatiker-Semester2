@@ -4,7 +4,7 @@ public class EmailEvaluator implements Evaluator {
     /** Returns true, if s contains a valid email address. */
     @Override
     public boolean isValid(String s) {
-
+        return false;
     }
 
     /**
