@@ -1,6 +1,5 @@
 package exercise4;
 
-import exercise4.handler_ting.HandlerList;
 import javafx.application.Application;
 import javafx.geometry.Insets;
 import javafx.scene.Scene;
@@ -11,6 +10,8 @@ import javafx.scene.control.ToggleGroup;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 import lombok.Getter;
+
+import java.util.HashSet;
 
 public class MainFrame extends Application {
     private final GridPane pane = new GridPane();
@@ -56,14 +57,14 @@ public class MainFrame extends Application {
         // ----- ME STUFF
 
         // Frame 1
-        SubFrame subFrame1 = new SubFrame("SubFrame 1", stage);
+        SubFrame subFrame1 = new SubFrame("SubFrame 1", stage, this);
 
         Button btnShowFrame1 = new Button("Open SubFrame 1");
         pane.add(btnShowFrame1, 0, 4);
         btnShowFrame1.setOnAction(event -> this.toggleShowSubFrame(subFrame1, btnShowFrame1));
 
         // Frame 2
-        SubFrame subFrame2 = new SubFrame("SubFrame 2", stage);
+        SubFrame subFrame2 = new SubFrame("SubFrame 2", stage, this);
 
         Button btnShowFrame2 = new Button("Open SubFrame 2");
         pane.add(btnShowFrame2, 0, 5);
@@ -74,24 +75,24 @@ public class MainFrame extends Application {
 
     private String color;
     @Getter
-    private static final HandlerList handlerList = new HandlerList();
+    private final HashSet<ColorObserver> observers = new HashSet<>();
 
     private void redAction() {
         color = "pink";
         pane.setStyle("-fx-background-color: " + color);
-        handlerList.updateAll(color);
+        updateAll(color);
     }
 
     private void greenAction() {
         color = "lightgreen";
         pane.setStyle("-fx-background-color: " + color);
-        handlerList.updateAll(color);
+        updateAll(color);
     }
 
     private void blueAction() {
         color = "lightskyblue";
         pane.setStyle("-fx-background-color: " + color);
-        handlerList.updateAll(color);
+        updateAll(color);
     }
 
     private void toggleShowSubFrame(SubFrame frame, Button button) {
@@ -101,6 +102,20 @@ public class MainFrame extends Application {
         } else {
             frame.show();
             button.setText("Close " + frame.getTitle());
+        }
+    }
+
+    public void registerObserver(ColorObserver colorObserver) {
+        observers.add(colorObserver);
+    }
+
+    public void unregisterObserver(ColorObserver colorObserver) {
+        observers.remove(colorObserver);
+    }
+
+    public void updateAll(String color) {
+        for (ColorObserver colorObserver : observers) {
+            colorObserver.update(color);
         }
     }
 

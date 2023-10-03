@@ -1,6 +1,5 @@
 package exercise4;
 
-import exercise4.handler_ting.FrameHandler;
 import javafx.geometry.Insets;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -9,11 +8,12 @@ import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
-public class SubFrame extends Stage {
+public class SubFrame extends Stage implements ColorObserver {
     private final GridPane pane = new GridPane();
-    private FrameHandler frameHandler = new FrameHandler(this);
+    private final MainFrame MainFrame;
 
-    public SubFrame(String title, Stage owner) {
+    public SubFrame(String title, Stage owner, MainFrame mainFrame) {
+        this.MainFrame = mainFrame;
         this.initOwner(owner);
         this.initStyle(StageStyle.UTILITY);
         this.setMinHeight(100);
@@ -52,15 +52,17 @@ public class SubFrame extends Stage {
 
     public void subscribe() {
         this.lblInfo.setText("State: Subscribed");
-        this.frameHandler.subscribe();
+        this.MainFrame.registerObserver(this);
     }
 
     public void unsubscribe() {
         this.lblInfo.setText("State: Unsubscribed");
-        this.frameHandler.unsubscribe();
+        this.MainFrame.unregisterObserver(this);
     }
 
-    public void setStyle(String style) {
-        this.pane.setStyle(style);
+    @Override
+    public void update(String color) {
+        this.pane.setStyle("-fx-background-color: " + color);
     }
+
 }
