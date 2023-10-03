@@ -4,7 +4,7 @@ import exercise4.MainFrame;
 import exercise4.SubFrame;
 
 public class FrameHandler {
-    private SubFrame subFrame;
+    private final SubFrame subFrame;
 
     public FrameHandler(SubFrame subFrame) {
         this.subFrame = subFrame;
