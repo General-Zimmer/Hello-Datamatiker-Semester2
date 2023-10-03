@@ -60,14 +60,14 @@ public class MainFrame extends Application {
 
         Button btnShowFrame1 = new Button("Open SubFrame 1");
         pane.add(btnShowFrame1, 0, 4);
-        btnShowFrame1.setOnAction(event -> this.toggleShowSubFrame(subFrame1));
+        btnShowFrame1.setOnAction(event -> this.toggleShowSubFrame(subFrame1, btnShowFrame1));
 
         // Frame 2
         SubFrame subFrame2 = new SubFrame("SubFrame 2", stage);
 
         Button btnShowFrame2 = new Button("Open SubFrame 2");
         pane.add(btnShowFrame2, 0, 5);
-        btnShowFrame2.setOnAction(event -> this.toggleShowSubFrame(subFrame2));
+        btnShowFrame2.setOnAction(event -> this.toggleShowSubFrame(subFrame2, btnShowFrame2));
     }
 
     // ------------------------------------------------------------------------
@@ -94,11 +94,13 @@ public class MainFrame extends Application {
         handlerList.update(color);
     }
 
-    private void toggleShowSubFrame(SubFrame frame) {
+    private void toggleShowSubFrame(SubFrame frame, Button button) {
         if (frame.isShowing()) {
             frame.hide();
+            button.setText("Open " + frame.getTitle());
         } else {
             frame.show();
+            button.setText("Close " + frame.getTitle());
         }
     }
 
