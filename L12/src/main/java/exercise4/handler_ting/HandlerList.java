@@ -4,19 +4,19 @@ import java.util.HashSet;
 
 public class HandlerList implements DoTheUpdate {
 
-    private final HashSet<DoTheUpdate> frameHandlers = new HashSet<>();
+    private final HashSet<DoTheUpdate> handlers = new HashSet<>(); // Observers
 
     public void registerHandler(DoTheUpdate frameHandler) {
-        frameHandlers.add(frameHandler);
+        handlers.add(frameHandler);
     }
 
     public void unregisterHandler(DoTheUpdate frameHandler) {
-        frameHandlers.remove(frameHandler);
+        handlers.remove(frameHandler);
     }
 
     @Override
     public void update(String color) {
-        for (DoTheUpdate frameHandler : frameHandlers) {
+        for (DoTheUpdate frameHandler : handlers) {
             frameHandler.update(color);
         }
     }
