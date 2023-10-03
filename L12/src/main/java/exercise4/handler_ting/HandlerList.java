@@ -2,20 +2,21 @@ package exercise4.handler_ting;
 
 import java.util.HashSet;
 
-public class HandlerList {
+public class HandlerList implements DoTheUpdate {
 
-    private final HashSet<FrameHandler> frameHandlers = new HashSet<>();
+    private final HashSet<DoTheUpdate> frameHandlers = new HashSet<>();
 
-    public void registerHandler(FrameHandler frameHandler) {
+    public void registerHandler(DoTheUpdate frameHandler) {
         frameHandlers.add(frameHandler);
     }
 
-    public void unregisterHandler(FrameHandler frameHandler) {
+    public void unregisterHandler(DoTheUpdate frameHandler) {
         frameHandlers.remove(frameHandler);
     }
 
+    @Override
     public void update(String color) {
-        for (FrameHandler frameHandler : frameHandlers) {
+        for (DoTheUpdate frameHandler : frameHandlers) {
             frameHandler.update(color);
         }
     }
