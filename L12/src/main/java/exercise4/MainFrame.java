@@ -79,19 +79,19 @@ public class MainFrame extends Application {
     private void redAction() {
         color = "pink";
         pane.setStyle("-fx-background-color: " + color);
-        handlerList.update(color);
+        handlerList.updateAll(color);
     }
 
     private void greenAction() {
         color = "lightgreen";
         pane.setStyle("-fx-background-color: " + color);
-        handlerList.update(color);
+        handlerList.updateAll(color);
     }
 
     private void blueAction() {
         color = "lightskyblue";
         pane.setStyle("-fx-background-color: " + color);
-        handlerList.update(color);
+        handlerList.updateAll(color);
     }
 
     private void toggleShowSubFrame(SubFrame frame, Button button) {

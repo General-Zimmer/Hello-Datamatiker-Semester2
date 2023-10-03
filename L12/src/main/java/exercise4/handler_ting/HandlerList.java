@@ -2,7 +2,7 @@ package exercise4.handler_ting;
 
 import java.util.HashSet;
 
-public class HandlerList implements DoTheUpdate {
+public class HandlerList {
 
     private final HashSet<DoTheUpdate> handlers = new HashSet<>(); // Observers
 
@@ -14,8 +14,7 @@ public class HandlerList implements DoTheUpdate {
         handlers.remove(frameHandler);
     }
 
-    @Override
-    public void update(String color) {
+    public void updateAll(String color) {
         for (DoTheUpdate frameHandler : handlers) {
             frameHandler.update(color);
         }
