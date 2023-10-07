@@ -52,12 +52,12 @@ public class SubFrame extends Stage implements ColorObserver {
 
     public void subscribe() {
         this.lblInfo.setText("State: Subscribed");
-        this.MainFrame.registerObserver(this);
+        exercise4.MainFrame.registerObserver(this);
     }
 
     public void unsubscribe() {
         this.lblInfo.setText("State: Unsubscribed");
-        this.MainFrame.unregisterObserver(this);
+        exercise4.MainFrame.unregisterObserver(this);
     }
 
     @Override

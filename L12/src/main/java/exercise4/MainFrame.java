@@ -75,7 +75,7 @@ public class MainFrame extends Application {
 
     private String color;
     @Getter
-    private final HashSet<ColorObserver> observers = new HashSet<>();
+    private final static HashSet<ColorObserver> observers = new HashSet<>();
 
     private void redAction() {
         color = "pink";
@@ -105,11 +105,11 @@ public class MainFrame extends Application {
         }
     }
 
-    public void registerObserver(ColorObserver colorObserver) {
+    public static void registerObserver(ColorObserver colorObserver) {
         observers.add(colorObserver);
     }
 
-    public void unregisterObserver(ColorObserver colorObserver) {
+    public static void unregisterObserver(ColorObserver colorObserver) {
         observers.remove(colorObserver);
     }
 
