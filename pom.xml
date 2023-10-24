@@ -21,6 +21,7 @@
       <module>L12</module>
     <module>DAOSL13</module>
       <module>DAOSL15</module>
+      <module>DAOSForsteOblOpgave</module>
   </modules>
 
   <properties>
