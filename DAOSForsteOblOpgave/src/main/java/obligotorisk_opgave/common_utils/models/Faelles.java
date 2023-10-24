@@ -6,16 +6,20 @@ import java.util.function.Consumer;
 public class Faelles {
     private int counter = 0;
 
-    public void wasteTime(int max) {
-        double amount = max * Math.random();
+    public void wasteTime(double max) {
+        wasteTime(max, 3);
+    }
 
-        double counter = 0;
-        for (int i = 0; i < amount; i++) {
-            for (int j = 0; j < amount; j++) {
-                counter = i*i+amount;
-            }
+    private void wasteTime(double size, int loopAmount) {
+        double amount = size * Math.random();
+        loopAmount--;
 
-        }
+        // Can slowly increase the size of loops
+        for (int i = 0; i < amount; i++)
+            size = 10+(size * (Math.random()+0.5));
+
+        if (loopAmount >= 0)
+            wasteTime(size, loopAmount);
     }
     public int getCounter() {
         return counter;
@@ -25,7 +29,7 @@ public class Faelles {
         // create a variable in the cpu cache
         int temp = counter;
         // waste time to randomize the incrementation time
-        wasteTime(1000);
+        wasteTime(100, 100);
         // increment the variable
         counter = temp+1;
     }

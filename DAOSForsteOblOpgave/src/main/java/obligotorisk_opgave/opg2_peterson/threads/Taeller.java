@@ -29,9 +29,9 @@ public class Taeller extends Thread {
             faelles.addCount();
             // Release lock
             MainPeterson.getFlag()[turn] = false;
-            // Waste random time to start addcount at random intervals
+            // Waste random time to start addcount at random intervals Note: is smaller since the lock is stupidly slow
             // (Is not actually needed here since the lock mechanism forces the threads to take turns)
-            faelles.wasteTime(100);
+            faelles.wasteTime(500);
         }
         printCounter("thread " + turn, faelles);
 

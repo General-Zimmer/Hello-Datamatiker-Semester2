@@ -21,7 +21,7 @@ public class Taeller extends Thread {
                 faelles.addCount();
             }
             // Waste random time to start addcount at random intervals
-            faelles.wasteTime(100);
+            faelles.wasteTime(10000);
         }
 
         printCounter(name, faelles);
