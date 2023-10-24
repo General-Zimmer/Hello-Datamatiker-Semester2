@@ -24,7 +24,6 @@ public class Taeller extends Thread {
             try {
                 semaphore.acquire();
                 faelles.addCount();
-
             } catch (InterruptedException e) {
                 throw new RuntimeException(e);
             } finally {
