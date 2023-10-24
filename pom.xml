@@ -19,6 +19,8 @@
       <module>L10</module>
     <module>L11</module>
       <module>L12</module>
+    <module>DAOSL13</module>
+      <module>DAOSL15</module>
   </modules>
 
   <properties>
