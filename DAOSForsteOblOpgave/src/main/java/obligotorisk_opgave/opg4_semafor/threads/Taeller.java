@@ -24,13 +24,14 @@ public class Taeller extends Thread {
             try {
                 semaphore.acquire();
                 faelles.addCount();
-                // Waste random time to start addcount at random intervals
-                faelles.wasteTime(100);
+
             } catch (InterruptedException e) {
                 throw new RuntimeException(e);
             } finally {
                 semaphore.release();
             }
+            // Waste random time to start addcount at random intervals
+            faelles.wasteTime(100);
         }
 
         printCounter(name, faelles);
