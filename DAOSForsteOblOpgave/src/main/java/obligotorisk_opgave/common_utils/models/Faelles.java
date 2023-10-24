@@ -24,7 +24,7 @@ public class Faelles {
     public void addCount() {
         // create a variable in the cpu cache
         int temp = counter;
-        // waste time
+        // waste time to randomize the incrementation time
         wasteTime(1000);
         // increment the variable
         counter = temp+1;
