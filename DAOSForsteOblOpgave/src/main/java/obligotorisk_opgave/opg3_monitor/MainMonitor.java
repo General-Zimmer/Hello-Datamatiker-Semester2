@@ -5,7 +5,6 @@ import obligotorisk_opgave.opg3_monitor.threads.Taeller;
 
 public class MainMonitor {
 
-
     public static void main(String[] args) {
         Faelles faelles = new Faelles();
         Thread thread1 = new Taeller(faelles, "Thread 1");

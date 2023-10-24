@@ -6,7 +6,7 @@ import obligotorisk_opgave.opg4_semafor.threads.Taeller;
 import java.util.concurrent.Semaphore;
 
 public class MainSemafor {
-    private static Semaphore semaphore = new Semaphore(1);
+    private static final Semaphore semaphore = new Semaphore(1);
 
     public static void main(String[] args) {
         Faelles faelles = new Faelles();
