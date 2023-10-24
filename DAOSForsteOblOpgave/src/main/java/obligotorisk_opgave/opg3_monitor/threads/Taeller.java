@@ -19,9 +19,10 @@ public class Taeller extends Thread {
             // Synchronized block using faelles as lock
             synchronized (faelles) {
                 faelles.addCount();
-                // Waste random time to start addcount at random intervals
-                faelles.wasteTime(100);
             }
+            // Waste random time to start addcount at random intervals
+            faelles.wasteTime(100);
+
         }
 
         printCounter(name, faelles);
