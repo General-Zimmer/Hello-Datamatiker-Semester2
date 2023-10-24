@@ -1,4 +1,4 @@
-package obligotorisk_opgave.common_utils.models;
+package obligotorisk_opgave.models;
 
 import java.lang.reflect.Array;
 import java.util.function.Consumer;

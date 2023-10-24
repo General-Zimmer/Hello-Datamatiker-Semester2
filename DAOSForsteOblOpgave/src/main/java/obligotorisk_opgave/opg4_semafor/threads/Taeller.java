@@ -1,11 +1,10 @@
 package obligotorisk_opgave.opg4_semafor.threads;
 
-import obligotorisk_opgave.common_utils.CommonUtil;
-import obligotorisk_opgave.common_utils.models.Faelles;
+import obligotorisk_opgave.models.Faelles;
 
 import java.util.concurrent.Semaphore;
 
-import static obligotorisk_opgave.common_utils.CommonUtil.printCounter;
+import static obligotorisk_opgave.utils.CommonUtil.printCounter;
 
 public class Taeller extends Thread {
 

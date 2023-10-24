@@ -1,6 +1,6 @@
-package obligotorisk_opgave.common_utils;
+package obligotorisk_opgave.utils;
 
-import obligotorisk_opgave.common_utils.models.Faelles;
+import obligotorisk_opgave.models.Faelles;
 
 import java.util.List;
 

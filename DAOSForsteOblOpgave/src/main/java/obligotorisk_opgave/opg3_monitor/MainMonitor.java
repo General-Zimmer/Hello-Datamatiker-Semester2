@@ -1,13 +1,13 @@
 package obligotorisk_opgave.opg3_monitor;
 
-import obligotorisk_opgave.common_utils.models.Faelles;
+import obligotorisk_opgave.models.Faelles;
 import obligotorisk_opgave.opg3_monitor.threads.Taeller;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import static obligotorisk_opgave.common_utils.CommonUtil.runThreads;
+import static obligotorisk_opgave.utils.CommonUtil.runThreads;
 
 public class MainMonitor {
 

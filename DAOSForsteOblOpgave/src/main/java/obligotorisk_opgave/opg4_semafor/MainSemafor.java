@@ -1,6 +1,6 @@
 package obligotorisk_opgave.opg4_semafor;
 
-import obligotorisk_opgave.common_utils.models.Faelles;
+import obligotorisk_opgave.models.Faelles;
 import obligotorisk_opgave.opg4_semafor.threads.Taeller;
 
 import java.util.ArrayList;
@@ -8,7 +8,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.concurrent.Semaphore;
 
-import static obligotorisk_opgave.common_utils.CommonUtil.runThreads;
+import static obligotorisk_opgave.utils.CommonUtil.runThreads;
 
 public class MainSemafor {
     private static final Semaphore semaphore = new Semaphore(1);
