@@ -4,7 +4,7 @@ import java.lang.reflect.Array;
 import java.util.function.Consumer;
 
 public class Faelles {
-    private final int[] counter = new int[1];
+    private int counter = 0;
 
     public void wasteTime(int max) {
         double amount = max * Math.random();
@@ -18,11 +18,15 @@ public class Faelles {
         }
     }
     public int getCounter() {
-        return counter[0];
+        return counter;
     }
 
-    public void addCount(Consumer<int[]> method) {
-        wasteTime(10);
-        method.accept(counter);
+    public void addCount() {
+        // create a variable in the cpu cache
+        int temp = counter;
+        // waste time
+        wasteTime(1000);
+        // increment the variable
+        counter = temp+1;
     }
 }

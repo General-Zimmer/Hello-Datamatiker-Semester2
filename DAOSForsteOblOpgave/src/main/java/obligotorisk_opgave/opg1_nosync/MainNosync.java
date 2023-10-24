@@ -5,8 +5,6 @@ import obligotorisk_opgave.opg1_nosync.threads.Taeller;
 
 public class MainNosync {
 
-
-
     public static void main(String[] args) {
         Faelles faelles = new Faelles();
         Thread thread1 = new Taeller(faelles, "Thread 1");

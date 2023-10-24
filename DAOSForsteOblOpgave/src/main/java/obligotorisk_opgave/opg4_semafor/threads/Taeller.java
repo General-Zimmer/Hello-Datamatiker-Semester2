@@ -1,16 +1,19 @@
 package obligotorisk_opgave.opg4_semafor.threads;
 
 import obligotorisk_opgave.common_utils.CommonUtil;
+import obligotorisk_opgave.common_utils.models.Faelles;
 
 import java.util.concurrent.Semaphore;
 
+import static obligotorisk_opgave.common_utils.CommonUtil.printCounter;
+
 public class Taeller extends Thread {
 
-    int[] counter;
-    String name;
-    private Semaphore semaphore;
-    public Taeller(int[] counter, String name, Semaphore semaphore) {
-        this.counter = counter;
+    private final Faelles faelles;
+    private final String name;
+    private final Semaphore semaphore;
+    public Taeller(Faelles faelles, String name, Semaphore semaphore) {
+        this.faelles = faelles;
         this.name = name;
         this.semaphore = semaphore;
     }
@@ -20,16 +23,17 @@ public class Taeller extends Thread {
         for (int i = 0; i < 100; i++) {
             try {
                 semaphore.acquire();
-                counter[0]++;
+                faelles.addCount();
+                // Waste random time to start addcount at random intervals
+                faelles.wasteTime(100);
             } catch (InterruptedException e) {
                 throw new RuntimeException(e);
             } finally {
                 semaphore.release();
             }
-            CommonUtil.wasteTime(1000);
         }
 
-        System.out.println(name + " finished with " + counter[0]);
+        printCounter(name, faelles);
 
     }
 }
