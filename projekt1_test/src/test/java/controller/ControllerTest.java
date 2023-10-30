@@ -6,9 +6,6 @@ import ordination.Patient;
 import storage.Storage;
 
 import java.time.LocalDate;
-import java.time.chrono.ChronoLocalDate;
-import java.util.ArrayList;
-import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 

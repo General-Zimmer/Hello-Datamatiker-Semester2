@@ -1,8 +1,5 @@
 package obligotorisk_opgave.models;
 
-import java.lang.reflect.Array;
-import java.util.function.Consumer;
-
 public class Faelles {
     private int counter = 0;
 
