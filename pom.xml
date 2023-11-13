@@ -24,6 +24,9 @@
       <module>DAOSForsteOblOpgave</module>
     <module>L16</module>
     <module>projekt1_test</module>
+      <module>DAOSL16</module>
+      <module>L17</module>
+      <module>L19</module>
   </modules>
 
   <properties>

@@ -123,21 +123,20 @@ public class SingleLinkedList23Y<E> implements List23Y<E> {
             throw new IndexOutOfBoundsException();
         }
 
+        Node<E> node;
         if (index == 0){
-            Node<E> node = new Node<>(e);
+            node = new Node<>(e);
             node.next = head;
             head = node;
-            size++;
-            return;
+        } else {
+            node = head;
+            for (int i = 0; i < index - 1; i++) {
+                node = node.next;
+            }
+            Node<E> newNode = new Node<>(e);
+            newNode.next = node.next;
+            node.next = newNode;
         }
-
-        Node<E> node = head;
-        for (int i = 0; i < index - 1; i++){
-            node = node.next;
-        }
-        Node<E> newNode = new Node<>(e);
-        newNode.next = node.next;
-        node.next = newNode;
         size++;
     }
 
