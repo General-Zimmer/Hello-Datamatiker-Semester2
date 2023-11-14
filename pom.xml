@@ -27,6 +27,7 @@
       <module>DAOSL16</module>
       <module>L17</module>
       <module>L19</module>
+      <module>DAOSL18</module>
   </modules>
 
   <properties>
