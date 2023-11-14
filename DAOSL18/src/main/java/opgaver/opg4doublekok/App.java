@@ -1,4 +1,4 @@
-package opgaver.opg4;
+package opgaver.opg4doublekok;
 
 public class App {
     public static void main(String[] args) {

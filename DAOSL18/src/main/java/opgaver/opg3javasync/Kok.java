@@ -14,10 +14,11 @@ public class Kok extends Thread {
             try {
                 int potionnr = resturant.potionFærdig();
                 System.out.println("Kokken har lavet potion " + potionnr);
-                Thread.sleep(100);
+                Thread.sleep(300);
             } catch (InterruptedException e) {
                 throw new RuntimeException(e);
             }
         }
+
     }
 }

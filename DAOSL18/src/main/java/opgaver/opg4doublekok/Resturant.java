@@ -1,4 +1,4 @@
-package opgaver.opg4;
+package opgaver.opg4doublekok;
 
 import lombok.Getter;
 

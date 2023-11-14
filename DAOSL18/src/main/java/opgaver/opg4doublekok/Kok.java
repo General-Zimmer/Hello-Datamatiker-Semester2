@@ -1,24 +1,24 @@
-package opgaver.opg4;
+package opgaver.opg4doublekok;
 
-public class Tjener extends Thread {
+public class Kok extends Thread {
 
     private final Resturant resturant;
-    public Tjener(Resturant resturant) {
+    public Kok(Resturant resturant) {
         this.resturant = resturant;
     }
-
     @Override
     public void run() {
 
         while (true) {
 
             try {
-                int bestillingsnr = resturant.bestil();
-                System.out.println("Tjeneren har taget bestilling nr. " + bestillingsnr);
-                Thread.sleep(400);
+                int potionnr = resturant.potionFærdig();
+                System.out.println("Kokken har lavet potion " + potionnr);
+                Thread.sleep(300);
             } catch (InterruptedException e) {
                 throw new RuntimeException(e);
             }
         }
+
     }
 }
