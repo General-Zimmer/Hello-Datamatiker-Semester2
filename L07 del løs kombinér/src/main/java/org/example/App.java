@@ -22,6 +22,11 @@ public class App
         ArrayList<Integer> ListToSort = new ArrayList<>(List.of(8, 56, 45, 34, 15, 12, 34, 44));
         mergesort(ListToSort, 0, ListToSort.size()-1);
         System.out.println(ListToSort);
+
+        // bonus ting tang
+        ArrayList<Integer> ListToKock = new ArrayList<>(List.of(8, 56, 45, 34, 15, 12, 34, 44));
+        quickSort(ListToKock);
+        System.out.println(ListToKock);
     }
 
     /**
@@ -116,5 +121,40 @@ public class App
         }
 
     }
+
+
+
+    private static void swap(ArrayList<Integer> list, int k, int l) {
+        int temp = list.get(k);
+        list.set(k, list.get(l));
+        list.set(l, temp);
+    }
+    private static void quickSort(ArrayList<Integer> list, int low, int high){
+        if (low < high) {
+            int p = partition(list, low, high);
+            quickSort(list, low, p-1);
+            quickSort(list, p+1, high);
+        }
+    }
+    private static int partition(ArrayList<Integer> list, int low, int high) {
+        int e = list.get(low);
+        int i = low + 1;
+        int j = high;
+        while (i <=j) {
+            if (list.get(i) <= e) { i++; }
+            else if (list.get(j) > e) { j--; }
+            else {
+                swap(list, i, j);
+                i++;
+                j--;
+            }
+        }
+        swap(list, low, j);
+        return j;
+    }
+    public static void quickSort(ArrayList<Integer> list) {
+        quickSort(list, 0, list.size()-1);
+    }
+
 
 }
